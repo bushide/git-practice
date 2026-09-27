@@ -1,4 +1,4 @@
-# Git Practice - main
+# Git Practice - merged
 
 My Git practice repository
 
