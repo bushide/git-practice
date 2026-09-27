@@ -1,4 +1,4 @@
-# git-practice
+# Git Practice - main
 
 My Git practice repository
 
