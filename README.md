@@ -1,4 +1,4 @@
-# git-practice
+# Git Practice - conflict-demo
 
 My Git practice repository
 
