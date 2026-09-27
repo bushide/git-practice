@@ -1,0 +1,78 @@
+Git 常用命令速查
+================
+
+一、初始设置
+-----------
+git config --global user.name "你的名字"       设置提交者姓名
+git config --global user.email "you@example.com" 设置提交者邮箱
+git config --global --list                      查看全局配置
+
+二、创建或获取仓库
+------------------
+git init                         在当前目录创建仓库
+git clone <仓库地址>             克隆远程仓库
+git clone <仓库地址> <目录名>    克隆到指定目录
+
+三、查看状态与历史
+------------------
+git status                       查看工作区和暂存区状态
+git status --short               简洁查看状态
+git log                          查看提交历史
+git log --oneline                每次提交显示一行
+git log --oneline --graph --all  图形化查看所有分支历史
+git show <提交号>                查看某次提交的详情
+
+四、暂存与提交
+--------------
+git add <文件名>       暂存指定文件
+git add .              暂存当前目录下的修改
+git add -p             逐块选择要暂存的修改
+git diff               查看尚未暂存的修改
+git diff --staged      查看已暂存、准备提交的修改
+git commit -m "说明"   创建提交
+git commit --amend     修改最近一次提交（提交已推送时慎用）
+
+五、分支操作
+------------
+git branch                         查看本地分支
+git branch <分支名>                创建分支
+git switch <分支名>                切换分支
+git switch -c <分支名>             创建并切换到新分支
+git merge <分支名>                 将指定分支合并到当前分支
+git branch -d <分支名>             删除已合并的本地分支
+
+六、远程仓库
+------------
+git remote -v                         查看远程仓库地址
+git remote add origin <仓库地址>      添加名为 origin 的远程仓库
+git fetch                             获取远程更新但不合并
+git pull                              获取并合并当前分支的远程更新
+git push                              推送当前分支
+git push -u origin <分支名>           首次推送并关联上游分支
+
+七、撤销与恢复
+--------------
+git restore <文件名>          丢弃文件尚未暂存的修改
+git restore --staged <文件名> 将文件移出暂存区，保留工作区修改
+git revert <提交号>           创建新提交以撤销指定提交
+git reset --soft HEAD~1       撤销最近提交，保留暂存区和工作区内容
+git reset --mixed HEAD~1      撤销最近提交，保留工作区内容（默认模式）
+git reset --hard HEAD~1       丢弃最近提交及其修改，操作前请确认
+
+八、暂存工作现场
+----------------
+git stash                 暂存当前未提交的修改
+git stash list            查看暂存列表
+git stash pop             恢复最近一次暂存并从列表移除
+git stash apply           恢复最近一次暂存但保留列表记录
+
+九、文件与标签
+--------------
+git mv <原文件> <新文件>      移动或重命名文件
+git rm <文件名>               删除文件并记录删除
+git tag                       查看标签
+git tag <标签名>              为当前提交创建轻量标签
+git push origin <标签名>      推送指定标签
+
+提示：尖括号中的内容是占位符，使用时替换成实际文件名、分支名或提交号。
+涉及 reset --hard、强制推送或修改已共享历史的操作前，请先确认不会丢失他人或自己的工作。
