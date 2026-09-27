@@ -8,7 +8,7 @@ My Git practice repository
 
 ## 学习记录
 
-- 学会了 git clone
-
-- 学会了 git pull
+* 学会了 git clone
+* 学会了 git pull
+* 我正在 feature-test 分支上学习 Git 分支
 
